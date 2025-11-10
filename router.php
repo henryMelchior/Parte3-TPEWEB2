@@ -1,6 +1,6 @@
 <?php
     require_once 'libs/router.php';
-    require_once 'app\controllers\platos.controller.php';
+    require_once 'app\controllers\noticiasController.php';
     require_once 'app/controllers/user.api.controller.php';
     require_once 'app/middlewares/jwt.auth.middleware.php';
 

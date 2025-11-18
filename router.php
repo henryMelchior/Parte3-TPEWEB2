@@ -8,18 +8,18 @@
     $router->addMiddleware(new JWTAuthMiddleware());
     #                 endpoint        verbo            controller              metodo
     #GET
-    $router->addRoute('noticias',        'GET',          'NoticiasApiController', 'getAll');//lista coleccion de entidades
+    $router->addRoute('noticias',        'GET',          'NoticiasApiController', 'getAll');
     $router->addRoute('noticias/:id',    'GET',          'NoticiasApiController', 'getById');
 
 
     #POST
-    $router->addRoute('noticias',        'POST',         'NoticiasApiController', 'create');// lista las entidades por id
+    $router->addRoute('noticias',        'POST',         'NoticiasApiController', 'create');
 
     #PUT 
-    $router->addRoute('noticias/:id',    'PUT',           'NoticiasApiController', 'update'); //editar plato por id
+    $router->addRoute('noticias/:id',    'PUT',           'NoticiasApiController', 'update');
 
     #DELETE
-    $router->addRoute('noticias/:id',     'DELETE',       'NoticiasApiController',  'eliminar'); //elimino un plato por id
+    $router->addRoute('noticias/:id',     'DELETE',       'NoticiasApiController',  'eliminar');
 
     $router->addRoute('usuarios/token'    ,            'GET',     'UserApiController',   'getToken');
 

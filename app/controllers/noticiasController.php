@@ -123,7 +123,7 @@ class NoticiasApiController{
     }
 
     public function update($req, $res) {
-          if(!$res->user) {
+        if(!$res->user) {
             return $this->view->response("No autorizado", 401);
         }
         $id = $req->params->id;

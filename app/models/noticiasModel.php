@@ -47,7 +47,7 @@ class NoticiasModel{
         return $tasks;
     }
     function getNoticia($id) {
-        $query = $this->db->prepare('SELECT * FROM noticia WHERE id_plato = ?');
+        $query = $this->db->prepare('SELECT * FROM noticia WHERE id_noticia = ?');
     
         
         $query->execute([$id]);
@@ -62,12 +62,12 @@ class NoticiasModel{
         return $this->db->lastInsertId();
     }
     function borrarNoticia($id) {
-        $query = $this->db->prepare('DELETE FROM noticia WHERE id_plato = ?');
+        $query = $this->db->prepare('DELETE FROM noticia WHERE id_noticia = ?');
         $query->execute([$id]);
     }
     function editarNoticia($id,$titulo, $parrafo, $categoria){
-        $query = $this->db->prepare('UPDATE noticia SET titulo = ?, parrafo = ?, id_categoria = ? WHERE id_plato = ?');
-        $query->execute([$id,$titulo, $parrafo, $categoria]);
+        $query = $this->db->prepare('UPDATE noticia SET titulo = ?, parrafo = ?, id_categoria = ? WHERE id_noticia = ?');
+        $query->execute([$titulo, $parrafo, $categoria,$id]);
     }
     public function getCategoria($id) {
         // 2. ejecuto la consulta SQL (SELECT * FROM tareas)

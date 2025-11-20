@@ -10,7 +10,7 @@
     #GET
     $router->addRoute('noticias',        'GET',          'NoticiasApiController', 'getAll');
     $router->addRoute('noticias/:id',    'GET',          'NoticiasApiController', 'getById');
-
+    $router->addRoute('usuarios/token'    ,     'GET',     'UserApiController',   'getToken');
 
     #POST
     $router->addRoute('noticias',        'POST',         'NoticiasApiController', 'create');
@@ -21,7 +21,7 @@
     #DELETE
     $router->addRoute('noticias/:id',     'DELETE',       'NoticiasApiController',  'eliminar');
 
-    $router->addRoute('usuarios/token'    ,            'GET',     'UserApiController',   'getToken');
+    
 
 
     $router->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);

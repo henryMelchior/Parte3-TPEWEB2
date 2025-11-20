@@ -28,13 +28,13 @@
             // Buscamos El usuario en la base
             $user = $this->model->getUser($user_pass[0]);
             // Chequeamos la contraseña
-            if($user == null || !password_verify($user_pass[1], $user->password)) {
+            if($user == null || !password_verify($user_pass[1], $user->contraseña)) {
                 return $this->view->response("Error en los datos ingresados", 400);
             }
             // Generamos el token
             $token = createJWT(array(
-                'sub' => $user->id_usuario,
-                'email' => $user->email,
+                'sub' => $user->id,
+                'email' => $user->usuario,
                 'role' => 'admin',
                 'iat' => time(),
                 'exp' => time() + 60,
